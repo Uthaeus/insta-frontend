@@ -4,7 +4,7 @@ function MainNavigation() {
 
     return (
         <nav className="main-nav-container">
-            <div>
+            <div className="main-nav-links-wrapper">
                 <NavLink to="/" end className={({ isActive }) => isActive ? 'nav-link active-link' : 'nav-link'}>Home</NavLink>
                 <NavLink to="/options" className={({ isActive }) => isActive ? 'nav-link active-link' : 'nav-link'}>Options</NavLink>
             </div>

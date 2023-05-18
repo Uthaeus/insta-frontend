@@ -1,0 +1,23 @@
+
+
+.main-nav-container {
+    width: 100%;
+    margin: 0;
+    background-color: rgba(140, 97, 33, 0.474);
+    color: white;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+
+    .main-nav-links-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .nav-link {
+        font-size: 1.2em;
+        text-decoration: none;
+        color: rgb(92, 173, 200);
+        margin: 0 1em;
+    }
+}
