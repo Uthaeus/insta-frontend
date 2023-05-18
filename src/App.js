@@ -4,6 +4,7 @@ import RootLayout from "./components/layouts/root";
 import HomePage from "./pages/home";
 import ErrorPage from "./components/error/error";
 import OptionsPage from "./pages/options";
+import AuthLayout from "./components/layouts/auth";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,17 @@ const router = createBrowserRouter([
       {
         path: "/options",
         element: <OptionsPage />
+      }
+    ]
+  },
+  {
+    path: "/auth",
+    element: <AuthLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/sign_in",
+        
       }
     ]
   }
