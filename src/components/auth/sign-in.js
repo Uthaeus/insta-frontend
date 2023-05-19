@@ -1,10 +1,34 @@
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+
+import { UserContext } from "../../store/user-context";
 
 function SignIn() {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const userCtx = useContext(UserContext);
 
     const onSubmit = data => {
-        console.log(data);
+        console.log('initial sign in data: ', data);
+
+        fetch('http://localhost:4000/users/sign_in', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ user: data })
+        })
+        .then(response => {
+            if (response.ok) {
+                let token = response.headers.get('Authorization');
+                localStorage.setItem('insta-token', token);
+                return response.json();
+            }
+        })
+        .then(data => {
+            console.log('data:', data);
+            userCtx.login(data.user);
+        })
+        .catch(error => console.log('sign in error: ', error));
     }
 
     return (

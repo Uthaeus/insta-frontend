@@ -1,9 +1,27 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+
+import { UserContext } from "../../store/user-context";
 
 function MainNavigation() {
+    const userCtx = useContext(UserContext);
 
     const logoutHandler = () => {
         console.log('logout');
+        
+        fetch('http://localhost:4000/users/sign_out', {
+            method: 'DELETE',
+            headers: {
+                'Authorization': localStorage.getItem('insta-token'),
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                localStorage.removeItem('insta-token');
+                userCtx.logout();
+            }
+        })
+        .catch(error => console.log('sign out error: ', error));
     };
 
     return (
