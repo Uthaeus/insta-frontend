@@ -13,6 +13,7 @@ export const logoutHandler = () => {
     })
     .then(response => {
         if (response.ok) {
+            localStorage.removeItem('insta-token');
         }
     })
     .catch(error => console.log('sign out error: ', error));

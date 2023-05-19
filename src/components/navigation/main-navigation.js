@@ -8,7 +8,6 @@ function MainNavigation() {
     const userCtx = useContext(UserContext);
 
     function onLogout() {
-        localStorage.removeItem('insta-token');
         userCtx.logout();
         logoutHandler();
     };
