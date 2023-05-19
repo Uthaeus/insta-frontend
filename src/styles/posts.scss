@@ -1,46 +1,140 @@
 
 
 .posts-container {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-    .posts-header {
-        width: 100%;
+    .left-column {
+        width: 90%;
+        max-width: 90%;
         padding: 1rem;
-        display: flex;
-        justify-content: space-between;
-    }
 
-    .posts-content-container {
-        width: 100%;
-        min-height: 100vh;
+        .posts-header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #161616;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
 
         .posts-list-wrapper {
-            display: flex;
-            flex-direction: column;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1rem;
         }
-
-
-        .posts-form-wrapper {
-            min-height: 100vh;
-            padding: 1rem;
-            border-left: 1px solid #121212;
-        }
-
     }
 
-    .posts-content-columns-51 {
-        display: grid;
-        grid-template-columns: 5fr 1fr;
-    }
-
-    .posts-content-columns-32 {
-        display: grid;
-        grid-template-columns: 3fr 2fr;
-    }
-
-    .posts-content-columns-13 {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
+    .right-column {
+        min-width: 90px;
+        padding: 0 3px;
+        height: 100vh;
+        background-color: grey;
+        border-left: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: all 0.5s ease-in-out;
     }
 }
+
+// Post Detail 
+
+.post-detail-container {
+    width: 75%;
+    margin: 2rem auto;
+    position: relative;
+
+    .post-detail-img {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+    }
+
+    .post-detail-links-wrapper {
+        width: 100%;
+        position: absolute;
+        bottom: 2rem;
+        display: flex;
+        justify-content: flex-end;
+
+        .post-detail-link {
+            font-size: 1.4em;
+            margin: 0 1rem;
+            color: #03bdf6;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                color: #161616;
+            }
+        }
+
+        .detail-btn {
+            padding: 3px 10px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            font-size: 1.4em;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+                box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+// Post Min Form 
+
+.post-min-form-wrapper {
+    width: 90px;
+    height: calc(100vh - 300px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 3px;
+
+    .min-form-click-element {
+        width: 90%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: grey;
+        color: #161616;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+            transform: scale(1.1);
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .min-form-logo-element {
+        width: 100%;
+        height: 50px;
+    }
+}
+
+// Post Item
+
+.post-item-wrapper {
+    width: 80%;
+    margin: 2rem auto;
+    border: 1px solid black;
+}
+
