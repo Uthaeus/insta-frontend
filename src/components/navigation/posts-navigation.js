@@ -25,6 +25,8 @@ function PostsNavigation() {
             }} />
 
             <div className="posts-links-wrapper">
+
+                <h2>{userContext.user?.username || 'Guest'}</h2>
                 
                 <NavLink to="/" end className={({isActive}) => isActive ? 'nav-link active-link' : 'nav-link'}>Home</NavLink>
             

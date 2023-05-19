@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { UserContext } from '../../store/user-context';
 import PostItem from './post-item';
+import PostForm from './post-form';
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -16,14 +17,24 @@ function Posts() {
     }, []);
 
     return (
-        <div>
-            <h1>Posts</h1>
-            {user && <Link to="/posts/new">Create New Post</Link>}
-            <hr />
+        <div className='posts-container'>
+            <div className='posts-header'>
+                <h1>Posts</h1>
+                {user && <Link to="/posts/new">Create New Post</Link>}
+            </div>
 
-            {posts.map(post => (
-                <PostItem key={post.id} post={post} />
-            ))}
+            <div className='posts-content-container posts-content-columns-51'>
+                <div className='posts-list-wrapper list-wrapper-width-full'>
+
+                    {posts.map(post => (
+                        <PostItem key={post.id} post={post} />
+                    ))}
+                </div>
+
+                <div className='posts-form-wrapper'>
+                    <PostForm />
+                </div>
+            </div>
 
         </div>
     );

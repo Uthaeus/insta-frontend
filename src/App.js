@@ -68,6 +68,10 @@ const router = createBrowserRouter([
         element: <EditPost />
       }
     ]
+  },
+  {
+    path: "*",
+    element: <ErrorPage />
   }
 ]);
 
