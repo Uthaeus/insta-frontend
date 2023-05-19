@@ -24,6 +24,7 @@ function MainNavigation() {
         .catch(error => console.log('sign out error: ', error));
     };
 
+
     return (
         <nav className="main-nav-container">
             <div className="main-nav-links-wrapper">
@@ -33,13 +34,18 @@ function MainNavigation() {
 
             <div className="main-nav-title-wrapper">
                 <p className="background-shade" />
-                <p className="main-nav-title">Great Logo</p>
+                <p className="main-nav-title">Welcome, {userCtx.user ? userCtx.user.username : 'dude'}</p>
             </div>
 
             <div className="main-auth-links-wrapper">
-                <NavLink to="/auth/sign_in" className={({ isActive }) => isActive ? 'nav-link active-link' : 'nav-link'}>Sign In</NavLink>
-                <NavLink to="/auth/sign_up" className={({ isActive }) => isActive ? 'nav-link active-link' : 'nav-link'}>Sign Up</NavLink>
-                <p className="nav-link" onClick={logoutHandler}>Sign Out</p>
+                {userCtx.user && <p className="nav-link" onClick={logoutHandler}>Sign Out</p>}
+
+                {!userCtx.user && (
+                    <>
+                        <NavLink to="/auth/sign_in" className={({ isActive }) => isActive ? 'nav-link active-link' : 'nav-link'}>Sign In</NavLink>
+                        <NavLink to="/auth/sign_up" className={({ isActive }) => isActive ? 'nav-link active-link' : 'nav-link'}>Sign Up</NavLink>
+                    </>
+                )}
             </div>
         </nav>
     );

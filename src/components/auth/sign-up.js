@@ -1,16 +1,18 @@
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
+import { useNavigate } from "react-router";
 
 import { UserContext } from "../../store/user-context";
 
 function SignUp() {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const userCtx = useContext(UserContext);
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log('initial signup data:', data);
 
-        if (data.password !== data.confirmPassword) {
+        if (data.password !== data.password_confirmation) {
             console.log('passwords do not match');
             return;
         }
@@ -31,7 +33,8 @@ function SignUp() {
         })
         .then(data => {
             console.log('data:', data);
-            userCtx.login(data.user);
+            userCtx.login(data.status.data);
+            navigate('/');
         })
         .catch(error => console.log('signup error: ', error));
 
@@ -61,9 +64,9 @@ function SignUp() {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="password">Confirm Password</label>
-                        <input type="password" className="form-control" {...register("confirmPassword", { required: true })} />
-                        {errors.confirmPassword && <span className="error-message">This field is required</span>}
+                        <label htmlFor="password_confirmation">Confirm Password</label>
+                        <input type="password" className="form-control" {...register("password_confirmation", { required: true })} />
+                        {errors.password_confirmation && <span className="error-message">This field is required</span>}
                     </div>
 
                     <div className="form-group">
