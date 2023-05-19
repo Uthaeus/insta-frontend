@@ -8,11 +8,12 @@ function MainNavigation() {
 
     const logoutHandler = () => {
         console.log('logout');
+        let token = localStorage.getItem('insta-token');
         
         fetch('http://localhost:4000/users/sign_out', {
             method: 'DELETE',
             headers: {
-                'Authorization': localStorage.getItem('insta-token'),
+                'Authorization': `Bearer ${token}`,
             }
         })
         .then(response => {

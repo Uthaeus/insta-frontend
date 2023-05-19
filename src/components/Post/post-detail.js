@@ -8,6 +8,9 @@ function PostDetail() {
     const { user } = useContext(UserContext);
     const { id } = useParams();
 
+    let postImage = `http://localhost:4000/${post.image?.url}`;
+    let createdAgo = (Date.now() - Date.parse(post.created_at)) / 1000 / 60 / 60 / 24;
+
     useEffect(() => {
         fetch(`http://localhost:4000/posts/${id}`)
         .then(response => response.json())
@@ -17,10 +20,10 @@ function PostDetail() {
 
     return (
         <div>
-            <h1>Post Detail</h1>
+            <img src={postImage} alt={post.content} />
             <hr />
             <h2>{post.content}</h2>
-            <p>by {post.user?.username}</p>
+            <p>by {post.user?.username} {createdAgo >= 1 ? `${Math.round(createdAgo)} days` : createdAgo * 24 >= 1 ? `${Math.round(createdAgo * 24)} hours` : createdAgo * 24 * 60 >= 1 ? `${Math.round(createdAgo * 24 * 60)} minutes` : `${Math.round(createdAgo * 24 * 60 * 60)} seconds` } ago.</p>
 
             <div>
                 {user.id === post.user_id && <Link to={`/posts/${id}/edit`}>Edit Post</Link>}

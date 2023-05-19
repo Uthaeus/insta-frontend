@@ -88,8 +88,7 @@ function App() {
         }
       })
       .then(data => {
-        console.log('user current data: ', data);
-        userCtx.login(data.status?.data);
+        userCtx.login(data);
       })
       .catch(error => console.log('user current error: ', error));
     }

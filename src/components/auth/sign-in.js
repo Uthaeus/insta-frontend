@@ -10,7 +10,6 @@ function SignIn() {
     const navigate = useNavigate();
 
     const onSubmit = data => {
-        console.log('initial sign in data: ', data);
 
         fetch('http://localhost:4000/users/sign_in', {
             method: 'POST',
@@ -21,13 +20,12 @@ function SignIn() {
         })
         .then(response => {
             if (response.ok) {
-                let token = response.headers.get('Authorization');
+                let token = response.headers.get('Authorization').split(' ')[1];
                 localStorage.setItem('insta-token', token);
                 return response.json();
             }
         })
         .then(data => {
-            console.log('data:', data.status.data);
             userCtx.login(data.status.data);
             navigate('/');
         })

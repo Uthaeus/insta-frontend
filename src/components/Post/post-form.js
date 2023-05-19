@@ -35,9 +35,13 @@ function PostForm({ post }) {
             headers: {
                 Authorization: `Bearer ${token}`
             },
-            body: JSON.stringify(buildForm(data))
+            body: buildForm(data)
         })
-        .then(response => response.json())
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
         .then(data => {
             console.log("data: ", data);
             navigate("/posts");

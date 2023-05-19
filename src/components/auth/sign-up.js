@@ -10,7 +10,6 @@ function SignUp() {
     const navigate = useNavigate();
 
     const onSubmit = data => {
-        console.log('initial signup data:', data);
 
         if (data.password !== data.password_confirmation) {
             console.log('passwords do not match');
@@ -26,13 +25,13 @@ function SignUp() {
         })
         .then(response => {
             if (response.ok) {
-                let token = response.headers.get('Authorization');
+                let token = response.headers.get('Authorization').split(' ')[1];
                 localStorage.setItem('insta-token', token);
                 return response.json();
             }
         })
         .then(data => {
-            console.log('data:', data);
+            console.log('signup data: ', data.status.data);
             userCtx.login(data.status.data);
             navigate('/');
         })
