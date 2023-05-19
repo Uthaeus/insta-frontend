@@ -2,27 +2,15 @@ import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 
 import { UserContext } from "../../store/user-context";
+import { logoutHandler } from "../util/auth";
 
 function MainNavigation() {
     const userCtx = useContext(UserContext);
 
-    const logoutHandler = () => {
-        console.log('logout');
-        let token = localStorage.getItem('insta-token');
-        
-        fetch('http://localhost:4000/users/sign_out', {
-            method: 'DELETE',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                localStorage.removeItem('insta-token');
-                userCtx.logout();
-            }
-        })
-        .catch(error => console.log('sign out error: ', error));
+    function onLogout() {
+        localStorage.removeItem('insta-token');
+        userCtx.logout();
+        logoutHandler();
     };
 
 
@@ -40,7 +28,7 @@ function MainNavigation() {
             </div>
 
             <div className="main-auth-links-wrapper">
-                {userCtx.user && <p className="nav-link" onClick={logoutHandler}>Sign Out</p>}
+                {userCtx.user && <p className="nav-link" onClick={onLogout}>Sign Out</p>}
 
                 {!userCtx.user && (
                     <>

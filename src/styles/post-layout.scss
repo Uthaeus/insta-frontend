@@ -1,0 +1,10 @@
+@import 'posts-navigation';
+
+.post-layout-container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+}

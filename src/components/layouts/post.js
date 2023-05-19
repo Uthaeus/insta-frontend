@@ -1,11 +1,11 @@
 import { Outlet } from "react-router";
 
-import MainNavigation from "../navigation/main-navigation";
+import PostsNavigation from "../navigation/posts-navigation";
 
 function PostLayout() {
     return (
-        <div>
-            <MainNavigation />
+        <div className="post-layout-container">
+            <PostsNavigation />
             <Outlet />
         </div>
     );
