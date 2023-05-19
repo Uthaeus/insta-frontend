@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import { UserContext } from "../../store/user-context";
+import PostCommentForm from "../comments/post-comment-form";
 
 function PostDetail() {
     const [post, setPost] = useState({});
@@ -62,7 +63,7 @@ function PostDetail() {
 
                 <div className="post-detail-comment-form-wrapper">
                     { user && (
-                        <p className="temp-comment-form"></p>
+                        <PostCommentForm post_id={id} user_id={user.id} />
                     )}
                     
                 </div>
