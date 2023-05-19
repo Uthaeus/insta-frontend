@@ -9,6 +9,8 @@ import AuthLayout from "./components/layouts/auth";
 import SignIn from "./components/auth/sign-in";
 import SignUp from "./components/auth/sign-up";
 import { UserContext } from "./store/user-context";
+import PostLayout from "./components/layouts/post";
+import Posts from "./components/Post/posts";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,18 @@ const router = createBrowserRouter([
         path: "/auth/sign_up",
         element: <SignUp />
       }
+    ]
+  },
+  {
+    path: "/posts",
+    element: <PostLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Posts />
+      },
+      {}
     ]
   }
 ]);
