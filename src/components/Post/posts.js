@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import { UserContext } from '../../store/user-context';
+import PostItem from './post-item';
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -21,9 +22,7 @@ function Posts() {
             <hr />
 
             {posts.map(post => (
-                <div key={post.id}>
-                    <h2>{post.title}</h2>
-                </div>
+                <PostItem key={post.id} post={post} />
             ))}
 
         </div>
