@@ -1,0 +1,19 @@
+
+.auth-layout-container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgb(122, 238, 186) 0%, #E5E5E5 100%);
+}
+
+.auth-form-container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem;
+
+    .auth-form-title {
+        font-size: 3rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        color: rgb(6, 41, 77);
+    }
+}

@@ -9,6 +9,7 @@ function SignUp() {
 
     return (
         <div className="auth-form-container">
+            <h1 className="auth-form-title">Sign Up</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="auth-form-input-container">
                     <div className="form-group">

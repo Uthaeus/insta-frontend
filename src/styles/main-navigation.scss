@@ -15,6 +15,36 @@
         align-items: center;
     }
 
+    .main-auth-links-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .main-nav-title-wrapper {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(180deg, rgb(122, 184, 238) 0%, #E5E5E5 100%);
+        position: relative;
+        overflow: hidden;
+
+        .main-nav-title {
+            font-size: 1.6em;
+            color:rgb(50, 1, 1);
+            font-weight: 600;
+            margin: 0;
+            position: absolute;
+            
+        }
+    }
+
+    .background-shade {
+        width: 60%;
+        height: 100%;
+        background-color: rgba(140, 97, 33, 0.104);
+        //animation: nav-logo-animation 29s ease-in-out infinite;
+    }
+
     .nav-link {
         font-size: 1.2em;
         text-decoration: none;
@@ -23,6 +53,7 @@
         transition: all 0.3s ease-in-out;
 
         &:hover {
+            cursor: pointer;
             color: rgb(255, 255, 255);
             transform: scale(1.1);
         }
@@ -32,5 +63,17 @@
         color: rgb(255, 255, 255);
         transform: scale(1.1);
         border-bottom: 1px solid rgb(50, 1, 1);
+    }
+}
+
+@keyframes nav-logo-animation {
+    0% {
+        transform: translateX(0)
+    }
+    50% {
+        transform: translateX(-90px)
+    }
+    100% {
+        transform: translateX(0)
     }
 }

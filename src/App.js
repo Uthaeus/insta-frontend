@@ -5,6 +5,8 @@ import HomePage from "./pages/home";
 import ErrorPage from "./components/error/error";
 import OptionsPage from "./pages/options";
 import AuthLayout from "./components/layouts/auth";
+import SignIn from "./components/auth/sign-in";
+import SignUp from "./components/auth/sign-up";
 
 const router = createBrowserRouter([
   {
@@ -28,8 +30,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/sign_in",
-        
+        path: "/auth/sign_in",
+        element: <SignIn />
+      },
+      {
+        path: "/auth/sign_up",
+        element: <SignUp />
       }
     ]
   }
