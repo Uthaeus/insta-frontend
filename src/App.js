@@ -11,6 +11,9 @@ import SignUp from "./components/auth/sign-up";
 import { UserContext } from "./store/user-context";
 import PostLayout from "./components/layouts/post";
 import Posts from "./components/Post/posts";
+import NewPost from "./components/Post/new-post";
+import PostDetail from "./components/Post/post-detail";
+import EditPost from "./components/Post/edit-post";
 
 const router = createBrowserRouter([
   {
@@ -52,7 +55,18 @@ const router = createBrowserRouter([
         index: true,
         element: <Posts />
       },
-      {}
+      {
+        path: "/posts/new",
+        element: <NewPost />
+      },
+      {
+        path: "/posts/:id",
+        element: <PostDetail />
+      },
+      {
+        path: "/posts/:id/edit",
+        element: <EditPost />
+      }
     ]
   }
 ]);
@@ -63,7 +77,7 @@ function App() {
   useEffect(() => {
     let token = localStorage.getItem("insta-token");
     if (token && token !== "undefined" && !userCtx.user) {
-      fetch("http://localhost:4000/users_current", {
+      fetch("http://localhost:4000/user_current", {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -74,7 +88,8 @@ function App() {
         }
       })
       .then(data => {
-        userCtx.login(data.status.data);
+        console.log('user current data: ', data);
+        userCtx.login(data.status?.data);
       })
       .catch(error => console.log('user current error: ', error));
     }

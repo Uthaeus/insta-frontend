@@ -21,6 +21,8 @@ function PostForm({ post }) {
         formData.append("post[content]", data.content);
         formData.append("post[image]", data.image[0]);
         formData.append("post[user_id]", userCtx.user.id);
+
+        return formData;
     }
 
     function submitHandler(data) {
