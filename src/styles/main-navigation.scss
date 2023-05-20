@@ -4,8 +4,8 @@
     width: 100%;
     margin: 0;
     padding: 2px 20px;
-    background-color: rgba(140, 97, 33, 0.474);
-    color: white;
+    background-color: #343A40;
+    color: #F8F9FA;
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
 
@@ -48,21 +48,22 @@
     .nav-link {
         font-size: 1.2em;
         text-decoration: none;
-        color: rgb(92, 173, 200);
+        color: #ADB5BD;
         margin: 2px 1em;
         transition: all 0.3s ease-in-out;
 
         &:hover {
             cursor: pointer;
-            color: rgb(255, 255, 255);
+            color: #E9ECEF;
             transform: scale(1.1);
         }
     }
 
     .active-link {
-        color: rgb(255, 255, 255);
+        color: #E9ECEF;
         transform: scale(1.1);
-        border-bottom: 1px solid rgb(50, 1, 1);
+        border-bottom: 1px solid #E9ECEF;
+        transition: all 0.3s ease-in-out;
     }
 }
 

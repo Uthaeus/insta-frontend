@@ -8,7 +8,7 @@ function PostCommentItem({ comment }) {
         {comment.content}
       </p>
         <p className="comment-author">
-            posted by <span>{comment.user?.username}</span>
+            posted by <span className="comment-author-span">{comment.user?.username}</span>
         </p>
     </Link>
   )

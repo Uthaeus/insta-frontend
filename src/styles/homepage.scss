@@ -1,0 +1,65 @@
+
+.homepage-container {
+    width: 90%;
+    min-height: calc(100vh - 80px);
+    margin: 0 auto;
+    padding: 2rem auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+
+    .homepage-header {
+        width: 100%;
+        height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .homepage-list {
+        width: 100%;
+        margin-top: 2rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+// Homepage Post Item
+
+.home-post-item-container {
+    width: 100%;
+    margin: 3px 0;
+    text-decoration: none;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #F8F9FA;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        transform: scale(1.02);
+    }
+
+    .home-post-item-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #212529;
+        margin-bottom: 0.5rem;
+        text-align: right;
+    }
+
+    .home-post-item-author {
+        font-size: 0.9em;
+        font-weight: 400;
+        color: #ADB5BD;
+        margin-bottom: 0.5rem;
+        text-align: right;
+        padding-right: 1rem;
+
+        .home-post-item-author-span {
+            font-size: 1em; 
+            font-weight: 600;
+            color: #495057;
+        }
+    }
+}

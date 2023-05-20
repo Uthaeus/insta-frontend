@@ -36,13 +36,12 @@ function PostCommentForm({ user_id, post_id }) {
 
     return (
         <form onSubmit={handleSubmit(submitHandler)}>
-            <div className="form-group mb-1">
-                <label htmlFor="content">Content</label>
-                <textarea className="form-control" {...register("content", { required: true })} />
+            <div className="form-group mb-3">
+                <textarea className="form-control" placeholder="Comment here:" rows={3} {...register("content", { required: true })} />
                 {errors.content && <span>This field is required</span>}
             </div>
 
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="comment-form-btn">Submit</button>
         </form>
     );
 }
