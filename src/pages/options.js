@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 
 import OptionsBase from '../components/options/options-base';
 import OptionsTopics from '../components/options/options-topics';

@@ -53,7 +53,80 @@
     .topic-detail-content {
         width: 100%;
         min-height: 600px;
+        max-height: 800px;
+        
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+
+        .topic-detail-content-user-info-wrapper {
+            margin: 2rem;
+
+            .topic-detail-content-user-info-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: rgb(25, 81, 119);
+            }
+
+            .topic-detail-content-user-info-item {
+                font-size: 0.9em;
+                font-weight: 700;
+                color: rgb(25, 81, 119);
+                margin: 1rem 0;
+            }
+
+            .topic-detail-content-user-info-name {
+                font-size: 1.3em;
+                color: #121212;
+                margin-left: 2rem;
+            }
+
+            .topic-detail-content-user-info-email {
+                font-size: 1.2em;
+                color: #121212;
+                margin-left: 2rem;
+            }
+        }
+
+        .topic-detail-content-user-comments-wrapper {
+            margin: 2rem;
+            max-height: 600px;
+            overflow-y: auto;
+            
+            .topic-detail-content-user-comments-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: rgb(25, 119, 105);
+            }
+        }
+
+        .topic-detail-content-user-posts-wrapper {
+            margin: 2rem;
+            max-height: 600px;
+            overflow-y: auto;
+
+            .topic-detail-content-user-posts-title {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: rgb(25, 119, 74);
+            }
+        }
+    }
+
+    .topic-detail-posts-wrapper {
+        width: 100%;
+
+        .topic-detail-posts-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgb(25, 81, 119);
+            margin: 2rem;
+        }
+
+        .topic-detail-posts-list {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 3rem;
+        }
     }
 }

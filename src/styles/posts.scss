@@ -147,63 +147,6 @@
     }
 }
 
-// Post Comment Item
-
-.comment-item {
-    width: 90%;
-    margin: 1rem auto;
-    padding: 0.5rem;
-    border-bottom: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    transition: all 0.15s ease-in-out;
-
-    &:hover {
-        cursor: pointer;
-        opacity: 0.8;
-        transform: scale(1.03);
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-    }
-
-    .comment-text {
-        font-size: 0.9em;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-        color: #121212;
-    }
-
-    .comment-author {
-        text-align: right;
-        font-size: 0.7em;
-        color: grey;
-
-        .comment-author-span {
-            font-size: 0.9em;
-            font-weight: bold;
-            color: #121212;
-        }
-    }
-}
-
-.comment-form-btn {
-    font-size: 0.9em;
-    color: #d3ebf3;
-    background-color: rgb(69, 99, 136);
-    border-radius: 3px;
-    padding: 1px 30px;
-    text-decoration: none;
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-        cursor: pointer;
-        opacity: 0.8;
-        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
-        transform: scale(1.1);
-    }
-}
-
 // Post Min Form 
 
 .post-min-form-wrapper {
