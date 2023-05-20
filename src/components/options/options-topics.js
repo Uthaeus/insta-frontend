@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
-import TopicItem from '../comments/topics/topic-item';
+import TopicItem from '../topics/topic-item';
+import TopicForm from '../topics/topic-form';
 
 function OptionsTopics() {
     const [topics, setTopics] = useState([]);
@@ -12,9 +13,16 @@ function OptionsTopics() {
             .catch(error => console.log('options topics error:', error));
     }, []);
 
+    function topicSubmitHandler(topic) {
+        setTopics(prevTopics => {
+            return [topic, ...prevTopics];
+        });
+    }
+
     return (
         <div className="options-topics">
             <h1 className="options-topics-title">Topics</h1>
+            <TopicForm topicSubmitHandler={topicSubmitHandler} />
             <hr />
 
             <div className="options-topics-content">

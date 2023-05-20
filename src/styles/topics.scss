@@ -3,10 +3,57 @@
 .topic-item {
     width: 100%;
     min-height: 150px;
+    text-decoration: none;
 
     .topic-item-title {
         font-size: 1.5rem;
         font-weight: 700;
         color: rgb(25, 81, 119);
+    }
+}
+
+.topic-form {
+    width: 60%;
+    display: flex;
+    padding: 1rem;
+    border: 1px solid black;
+
+    .topic-form-title {
+        font-size: 1.1em;
+        font-weight: 700;
+        color: rgb(25, 81, 119);
+    }
+
+    .topic-form-input {
+        width: 70%;
+        margin-left: 1rem;
+        padding: 0.5rem;
+        border: 1px solid black;
+        font-size: 1.2em;
+        color: #121212;
+        border-radius: 3px;
+    }
+}
+
+.topic-detail {
+    width: 95%;
+    min-height: calc(100vh - 100px);
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+
+    .topic-detail-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: black;
+        margin: 2rem;
+    }
+
+    .topic-detail-content {
+        width: 100%;
+        min-height: 600px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }

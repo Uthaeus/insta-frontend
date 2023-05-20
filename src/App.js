@@ -15,6 +15,7 @@ import NewPost from "./components/Post/new-post";
 import PostDetail from "./components/Post/post-detail";
 import EditPost from "./components/Post/edit-post";
 import CommentDetail from "./components/comments/comment-detail";
+import TopicDetail from "./components/topics/topic-detail";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/options",
         element: <OptionsPage />
+      },
+      {
+        path: "/topics/:id",
+        element: <TopicDetail />
       }
     ]
   },
