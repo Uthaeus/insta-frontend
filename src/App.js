@@ -14,6 +14,7 @@ import Posts from "./components/Post/posts";
 import NewPost from "./components/Post/new-post";
 import PostDetail from "./components/Post/post-detail";
 import EditPost from "./components/Post/edit-post";
+import CommentDetail from "./components/comments/comment-detail";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: "/posts/:id/edit",
         element: <EditPost />
+      },
+      {
+        path: "/posts/comments/:id",
+        element: <CommentDetail />
       }
     ]
   },

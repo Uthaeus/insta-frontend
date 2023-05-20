@@ -25,16 +25,18 @@ function PostCommentForm({ user_id, post_id }) {
         })
         .then(response => {
             if (response.ok) {
+                console.log('post comment response: ', response);
                 reset();
                 return response.json();
             }
         })
+        .then(data => console.log('post comment data: ', data))
         .catch(error => console.log('post comment error: ', error));
     }
 
     return (
         <form onSubmit={handleSubmit(submitHandler)}>
-            <div className="form-group">
+            <div className="form-group mb-1">
                 <label htmlFor="content">Content</label>
                 <textarea className="form-control" {...register("content", { required: true })} />
                 {errors.content && <span>This field is required</span>}

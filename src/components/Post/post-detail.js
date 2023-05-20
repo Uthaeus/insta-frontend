@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 import { UserContext } from "../../store/user-context";
 import PostCommentForm from "../comments/post-comment-form";
+import PostCommentItem from "../comments/post-comment-item";
 
 function PostDetail() {
     const [post, setPost] = useState({});
+    const [comments, setComments] = useState([]);
     const { user } = useContext(UserContext);
     const { id } = useParams();
     const navigate = useNavigate();
@@ -17,7 +19,11 @@ function PostDetail() {
     useEffect(() => {
         fetch(`http://localhost:4000/posts/${id}`)
         .then(response => response.json())
-        .then(data => setPost(data))
+        .then(data => {
+            setComments(data.comments);
+            setPost(data);
+            //setComments(data.comments);
+        })
         .catch(error => console.log('post detail error: ', error));
     }, [id]);
 
@@ -73,7 +79,7 @@ function PostDetail() {
             <h3 className="post-detail-comments-title">Comments</h3>
                 <hr />
                 <div className="post-detail-comments">
-
+                    {comments.map(comment => <PostCommentItem key={comment.id} comment={comment} />)}
                 </div>
             </div>
         </div>
