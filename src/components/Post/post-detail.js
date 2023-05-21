@@ -20,6 +20,7 @@ function PostDetail() {
         fetch(`http://localhost:4000/posts/${id}`)
         .then(response => response.json())
         .then(data => {
+            console.log('post detail data: ', data);
             setComments(data.comments);
             setPost(data);
             //setComments(data.comments);

@@ -191,6 +191,17 @@
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 
+    .post-item-img {
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+            transform: scale(1.1);
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+        }
+    }
+
     .post-item-content-wrapper {
         width: 100%;
         display: grid;
@@ -216,9 +227,16 @@
         color: #03bdf6;
     }
 
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.1);
+
+    .post-item-like-btn {
+        padding: 1rem;
+        color: red;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
     }
 }
 

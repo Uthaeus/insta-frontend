@@ -14,7 +14,10 @@ function Posts() {
     useEffect(() => {
         fetch('http://localhost:4000/posts')
         .then(response => response.json())
-        .then(data => setPosts(data))
+        .then(data => {
+            console.log('posts data: ', data);
+            setPosts(data)
+        })
         .catch(error => console.log('posts error: ', error));
     }, []);
 
@@ -60,7 +63,7 @@ function Posts() {
                 </div>
 
                 <div className='posts-list-wrapper'>
-                    {posts.map(post => <PostItem key={post.id} post={post} />)}
+                    {posts?.map(post => <PostItem key={post.id} post={post} user={user} />)}
                 </div>
             </div>
 
